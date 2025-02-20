@@ -36,7 +36,55 @@
     </ul>
     <img src="https://static-blog.render.com.br/wp-content/uploads/2013/03/Pixel-e-sistema-RGB-03-550x346.png" alt="Funcionamento do Pixel no Modelo RGB">
   </section>
+  <title>Botão de Cor</title>
+    <style>
+        /* Estilo do botão */
+        .botao {
+            width: 100px;
+            height: 50px;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
+        .botao:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Botão -->
+    <button class="botao" id="botaoColorido">Cor</button>
+
+    <script>
+        // Seleciona o botão
+        const botao = document.getElementById("botaoColorido");
+
+        // Função que muda a cor do botão
+        let cor = 0;  // Variável para controlar o índice da cor
+
+        botao.addEventListener("click", function() {
+            cor++;
+            if (cor === 1) {
+                botao.style.backgroundColor = "#28a745"; // Cor verde
+            } else if (cor === 2) {
+                botao.style.backgroundColor = "#ffc107"; // Cor amarela
+            } else if (cor === 3) {
+                botao.style.backgroundColor = "#dc3545"; // Cor vermelha
+            } else {
+                botao.style.backgroundColor = "#007BFF"; // Cor azul
+                cor = 0; // Resetando as cores
+            }
+        });
+    </script>
+
+</body>
+</html>
   <section>
     <h2>Modelo CMY (Cyan, Magenta, Yellow)</h2>
     <p>O modelo CMY é um modelo de cores subtrativo utilizado em impressão, onde as cores são criadas pela subtração de luz. Ele usa três cores primárias: ciano (Cyan), magenta (Magenta) e amarelo (Yellow). Quando combinadas, elas absorvem luz de diferentes partes do espectro visível, resultando em cores.</p>
@@ -78,9 +126,8 @@
   <title>Botão de Redirecionamento</title>
 </head>
 <body>
+  
   <section>
-    <button onclick="window.location.href='https://nunescostavinicius.github.io/Song/';">Surpresa🎁</button>
+    <!-- Botão que redireciona para o link -->
+    <button id="surpresa" onclick="redirecionarComSom()">Surpresa🎁</button>
   </section>
-
-</body>
-</html>
